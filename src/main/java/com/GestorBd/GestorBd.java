@@ -108,10 +108,7 @@ public class GestorBd {
                 insertarReserva(new Reservas(13,"Rojas", LocalTime.of(20, 0), LocalTime.of(22, 0), 6, 8, "2024-11-12"));
 
                 System.out.println("Reservas base insertadas correctamente.");
-            } else {
-                System.out.println("La tabla ya contiene reservas. No se insertarán reservas base.");
-            }
-
+            } 
         } catch (SQLException e) {
             System.err.println("Error al verificar o insertar reservas base: " + e.getMessage());
         }

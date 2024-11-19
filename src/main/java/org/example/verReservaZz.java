@@ -3,6 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package org.example;
+import com.GestorBd.GestorBd;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+
+
 
 /**
  *
@@ -10,12 +20,17 @@ package org.example;
  */
 public class verReservaZz extends javax.swing.JPanel {
 
+
+
     /**
      * Creates new form verReservaZz
      */
     public verReservaZz() {
         initComponents();
+        
     }
+                    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -63,14 +78,12 @@ public class verReservaZz extends javax.swing.JPanel {
         bg.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, -1, -1));
 
         numeroMesa.setBackground(new java.awt.Color(255, 255, 255));
-        numeroMesa.setText("jTextField1");
         numeroMesa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 204, 255), 2, true));
         numeroMesa.setCaretColor(new java.awt.Color(0, 102, 255));
         numeroMesa.setDisabledTextColor(new java.awt.Color(51, 153, 255));
         bg.add(numeroMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 200, 30));
 
         horaReservacion.setBackground(new java.awt.Color(255, 255, 255));
-        horaReservacion.setText("jTextField1");
         horaReservacion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 204, 255), 2, true));
         horaReservacion.setCaretColor(new java.awt.Color(0, 102, 255));
         horaReservacion.setDisabledTextColor(new java.awt.Color(51, 153, 255));
@@ -82,14 +95,12 @@ public class verReservaZz extends javax.swing.JPanel {
         bg.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, -1, -1));
 
         nombreCliente.setBackground(new java.awt.Color(255, 255, 255));
-        nombreCliente.setText("jTextField1");
         nombreCliente.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 204, 255), 2, true));
         nombreCliente.setCaretColor(new java.awt.Color(0, 102, 255));
         nombreCliente.setDisabledTextColor(new java.awt.Color(51, 153, 255));
         bg.add(nombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 200, 30));
 
         numeroPerso.setBackground(new java.awt.Color(255, 255, 255));
-        numeroPerso.setText("jTextField1");
         numeroPerso.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 204, 255), 2, true));
         numeroPerso.setCaretColor(new java.awt.Color(0, 102, 255));
         numeroPerso.setDisabledTextColor(new java.awt.Color(51, 153, 255));
@@ -106,7 +117,6 @@ public class verReservaZz extends javax.swing.JPanel {
         bg.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, -1, -1));
 
         fechaReservacion.setBackground(new java.awt.Color(255, 255, 255));
-        fechaReservacion.setText("jTextField1");
         fechaReservacion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 204, 255), 2, true));
         fechaReservacion.setCaretColor(new java.awt.Color(0, 102, 255));
         fechaReservacion.setDisabledTextColor(new java.awt.Color(51, 153, 255));
@@ -126,6 +136,34 @@ public class verReservaZz extends javax.swing.JPanel {
 
     private void reservacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservacionActionPerformed
         // TODO add your handling code here:
+        try {
+            String nombre = nombreCliente.getText();
+            String fecha = fechaReservacion.getText();
+            String hora = horaReservacion.getText();
+            int numeroPer = Integer.parseInt(numeroPerso.getText());
+            int numeroM = Integer.parseInt(numeroMesa.getText());
+
+            if (nombre.isEmpty() || fecha.isEmpty() || hora.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Todos los campos deben ser completados.");
+                return;
+            }
+
+            LocalTime horaReserva = LocalTime.parse(hora, DateTimeFormatter.ofPattern("HH:mm"));
+            LocalTime horaFin = horaReserva.plusHours(2);
+
+            Reservas reserva = new Reservas(0, nombre, horaReserva, horaFin, numeroPer, numeroM, fecha);
+            controlBd.insertarReserva(reserva);
+          
+            //Confirmación de la reservación
+            JOptionPane.showMessageDialog(this, "Reserva añadida con éxito.");
+            
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Error: Número de personas o mesa inválido.");
+        } catch (DateTimeParseException ex) {
+            JOptionPane.showMessageDialog(this, "Error: Formato de hora incorrecto (HH:mm).");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Error inesperado: " + ex.getMessage());
+        }
     }//GEN-LAST:event_reservacionActionPerformed
 
 
@@ -143,4 +181,6 @@ public class verReservaZz extends javax.swing.JPanel {
     private javax.swing.JTextField numeroPerso;
     private javax.swing.JButton reservacion;
     // End of variables declaration//GEN-END:variables
+    private GestorBd controlBd = new GestorBd();
+
 }

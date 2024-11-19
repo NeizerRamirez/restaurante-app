@@ -19,6 +19,7 @@ public class verMesasZz extends javax.swing.JFrame {
      */
     public verMesasZz() {
         initComponents();
+     setTitle("Mesas en el restaurante");
     //Cerrrar solo la ventana y no todo el programa
     setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 

@@ -4,6 +4,9 @@
  */
 package org.example;
 
+import com.GestorBd.GestorBd;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ACER
@@ -47,14 +50,12 @@ public class ClientesReservacionZz extends javax.swing.JPanel {
         bg.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, -1, -1));
 
         nombreCliente.setBackground(new java.awt.Color(255, 255, 255));
-        nombreCliente.setText("jTextField1");
         nombreCliente.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 204, 255), 2, true));
         nombreCliente.setCaretColor(new java.awt.Color(0, 102, 255));
         nombreCliente.setDisabledTextColor(new java.awt.Color(51, 153, 255));
         bg.add(nombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 200, 30));
 
         esperaAprox.setBackground(new java.awt.Color(255, 255, 255));
-        esperaAprox.setText("jTextField1");
         esperaAprox.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 204, 255), 2, true));
         esperaAprox.setCaretColor(new java.awt.Color(0, 102, 255));
         esperaAprox.setDisabledTextColor(new java.awt.Color(51, 153, 255));
@@ -86,6 +87,13 @@ public class ClientesReservacionZz extends javax.swing.JPanel {
 
     private void enviarALaEsperaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarALaEsperaButtonActionPerformed
         // TODO add your handling code here:
+        
+        String nombre = nombreCliente.getText();
+        int esperaAproximada = Integer.parseInt(esperaAprox.getText());
+        ClientePila esperas = new ClientePila(nombre, esperaAproximada);
+        GestorBd gestorBd = new GestorBd();
+        gestorBd.agregarAEspera(esperas);
+        JOptionPane.showMessageDialog(null, "Cliente añadido con éxito");
     }//GEN-LAST:event_enviarALaEsperaButtonActionPerformed
 
 

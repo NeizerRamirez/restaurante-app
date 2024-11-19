@@ -23,6 +23,7 @@ public class ReservasZz extends javax.swing.JFrame {
      */
     public ReservasZz() {
         initComponents();
+    setTitle("Reservaciones programadas");
     setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         //Diseño de la tabla
