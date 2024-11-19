@@ -24,6 +24,16 @@ public class InterfaZZzzzzZZ extends javax.swing.JFrame {
      */
     public InterfaZZzzzzZZ() {
         initComponents();
+        
+        // Ver las reservas 
+        verReservacionesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ReservasZz cargarReservaciones = new ReservasZz();
+                cargarReservaciones.setSize(900,450);
+                cargarReservaciones.setVisible(true);
+            }
+        });
                 
         // Acción al presionar eliminar reserva
         eliminarReserva.addActionListener(new ActionListener() {
