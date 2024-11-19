@@ -25,6 +25,20 @@ public class InterfaZZzzzzZZ extends javax.swing.JFrame {
     public InterfaZZzzzzZZ() {
         initComponents();
         
+        //Panel de inicio este es el predeterminado a salir al principio
+        Inicio inicio = new Inicio();
+        inicio.setSize(800,500);
+        inicio.setLocation(0,0);
+        
+        content.removeAll();
+        content.add(inicio, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
+        Bienvenido_txt.setText("¡Bienvenido!");
+
+        
+        
+        
         // Ver las reservas 
         verReservacionesButton.addActionListener(new ActionListener() {
             @Override
@@ -80,7 +94,6 @@ public class InterfaZZzzzzZZ extends javax.swing.JFrame {
         decoracion = new javax.swing.JPanel();
         Bienvenido_txt = new javax.swing.JLabel();
         content = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -188,23 +201,15 @@ public class InterfaZZzzzzZZ extends javax.swing.JFrame {
 
         content.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setText("Este es el sistema para administrar las reservas de nuestro restaurante, pulsa una de las opciones a la izquierda");
-
         javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
         content.setLayout(contentLayout);
         contentLayout.setHorizontalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contentLayout.createSequentialGroup()
-                .addGap(162, 162, 162)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(166, Short.MAX_VALUE))
+            .addGap(0, 610, Short.MAX_VALUE)
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contentLayout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+            .addGap(0, 360, Short.MAX_VALUE)
         );
 
         bg.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 610, 360));
@@ -225,7 +230,7 @@ public class InterfaZZzzzzZZ extends javax.swing.JFrame {
 
 
     private void InicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InicioActionPerformed
-        // TODO add your handling code here:
+        // Mismo panel que el del inicio, pero aqui se carga mediante el boton de "inicio"
         Inicio inicio = new Inicio();
         inicio.setSize(800,500);
         inicio.setLocation(0,0);
@@ -338,7 +343,6 @@ public class InterfaZZzzzzZZ extends javax.swing.JFrame {
     private javax.swing.JPanel decoracion;
     private javax.swing.JButton eliminarReserva;
     private javax.swing.JButton gestionarEsperasButton;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton reservasPorTelefonoButton;
     private javax.swing.JButton verMesas;
     private javax.swing.JButton verReservacionesButton;

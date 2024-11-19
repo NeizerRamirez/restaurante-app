@@ -283,30 +283,15 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" pref="282" max="-2" attributes="0"/>
-                      <EmptySpace pref="166" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="0" pref="610" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" pref="129" max="-2" attributes="0"/>
-                      <EmptySpace pref="127" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="0" pref="360" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Este es el sistema para administrar las reservas de nuestro restaurante, pulsa una de las opciones a la izquierda"/>
-              </Properties>
-            </Component>
-          </SubComponents>
         </Container>
       </SubComponents>
     </Container>

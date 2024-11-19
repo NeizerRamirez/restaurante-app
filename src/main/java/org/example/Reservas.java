@@ -4,7 +4,7 @@ import java.time.LocalTime;
 
 
 public class Reservas {
-    private int id;  // Corregido: "Id" a "id"
+    private int id;
     private String nombreCliente;
     private LocalTime horaReserva; // Cambiado a LocalTime
     private LocalTime horaFin;     // Nuevo campo
