@@ -132,7 +132,7 @@ public class GestorBd {
     // Método para obtener todas las reservas
     public List<Reservas> obtenerReservas() {
         List<Reservas> listaReservas = new ArrayList<>();
-        String selectSQL = "SELECT * FROM reservas";
+        String selectSQL = "SELECT * FROM reservas ORDER BY fecha_reserva ASC, hora_reserva ASC ";
 
         try (Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(selectSQL)) {
@@ -156,7 +156,7 @@ public class GestorBd {
         return listaReservas;
     }
 
-    // Método para obtener todas las reservas
+    // Método para obtener todas las mesas
     public List<Reservas> obtenerMesas() {
         List<Reservas> listaMesas = new ArrayList<>();
         String selectSQL = "SELECT * FROM reservas ORDER BY numero_mesa ASC, hora_reserva ASC";
