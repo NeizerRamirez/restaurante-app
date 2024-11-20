@@ -9,6 +9,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -36,7 +37,7 @@ public class InterfaZZzzzzZZ extends javax.swing.JFrame {
         content.repaint();
         Bienvenido_txt.setText("¡Bienvenido!");
 
-        
+        setIconImage (new ImageIcon(getClass().getResource("/estrella.png")).getImage());
         
         
         // Ver las reservas 
@@ -87,25 +88,25 @@ public class InterfaZZzzzzZZ extends javax.swing.JFrame {
         reservasPorTelefonoButton = new javax.swing.JButton();
         ClienteReservacion = new javax.swing.JButton();
         eliminarReserva = new javax.swing.JButton();
-        gestionarEsperasButton = new javax.swing.JButton();
         verReservacionesButton = new javax.swing.JButton();
         verMesas = new javax.swing.JButton();
         SistemaAdmin_txt = new javax.swing.JLabel();
+        gestionarEsperasButton = new javax.swing.JButton();
+        content = new javax.swing.JPanel();
         decoracion = new javax.swing.JPanel();
         Bienvenido_txt = new javax.swing.JLabel();
-        content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Selector.setBackground(new java.awt.Color(0, 0, 255));
+        Selector.setBackground(new java.awt.Color(178, 34, 34));
         Selector.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Inicio.setBackground(new java.awt.Color(0, 0, 255));
+        Inicio.setBackground(new java.awt.Color(155, 17, 30));
         Inicio.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        Inicio.setForeground(new java.awt.Color(255, 255, 255));
+        Inicio.setForeground(new java.awt.Color(248, 241, 233));
         Inicio.setText("Inicio");
         Inicio.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Inicio.addActionListener(new java.awt.event.ActionListener() {
@@ -113,80 +114,97 @@ public class InterfaZZzzzzZZ extends javax.swing.JFrame {
                 InicioActionPerformed(evt);
             }
         });
-        Selector.add(Inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 230, 50));
+        Selector.add(Inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 230, 50));
 
-        reservasPorTelefonoButton.setBackground(new java.awt.Color(0, 0, 255));
+        reservasPorTelefonoButton.setBackground(new java.awt.Color(155, 17, 30));
         reservasPorTelefonoButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        reservasPorTelefonoButton.setForeground(new java.awt.Color(255, 255, 255));
+        reservasPorTelefonoButton.setForeground(new java.awt.Color(248, 241, 233));
         reservasPorTelefonoButton.setText("Reservas por telefono");
         reservasPorTelefonoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 reservasPorTelefonoButtonActionPerformed(evt);
             }
         });
-        Selector.add(reservasPorTelefonoButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 230, 50));
+        Selector.add(reservasPorTelefonoButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 230, 50));
 
-        ClienteReservacion.setBackground(new java.awt.Color(0, 0, 255));
+        ClienteReservacion.setBackground(new java.awt.Color(155, 17, 30));
         ClienteReservacion.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        ClienteReservacion.setForeground(new java.awt.Color(255, 255, 255));
+        ClienteReservacion.setForeground(new java.awt.Color(248, 241, 233));
         ClienteReservacion.setText("Clientes sin reservación");
         ClienteReservacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ClienteReservacionActionPerformed(evt);
             }
         });
-        Selector.add(ClienteReservacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 230, 50));
+        Selector.add(ClienteReservacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 230, 50));
 
-        eliminarReserva.setBackground(new java.awt.Color(0, 0, 255));
+        eliminarReserva.setBackground(new java.awt.Color(155, 17, 30));
         eliminarReserva.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        eliminarReserva.setForeground(new java.awt.Color(255, 255, 255));
+        eliminarReserva.setForeground(new java.awt.Color(248, 241, 233));
         eliminarReserva.setText("Eliminar reserva");
         eliminarReserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eliminarReservaActionPerformed(evt);
             }
         });
-        Selector.add(eliminarReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 230, 50));
+        Selector.add(eliminarReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 230, 50));
 
-        gestionarEsperasButton.setBackground(new java.awt.Color(0, 0, 255));
-        gestionarEsperasButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        gestionarEsperasButton.setForeground(new java.awt.Color(255, 255, 255));
-        gestionarEsperasButton.setText("Gestionar esperas");
-        gestionarEsperasButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gestionarEsperasButtonActionPerformed(evt);
-            }
-        });
-        Selector.add(gestionarEsperasButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 230, 50));
-
-        verReservacionesButton.setBackground(new java.awt.Color(0, 0, 255));
+        verReservacionesButton.setBackground(new java.awt.Color(155, 17, 30));
         verReservacionesButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        verReservacionesButton.setForeground(new java.awt.Color(255, 255, 255));
+        verReservacionesButton.setForeground(new java.awt.Color(248, 241, 233));
         verReservacionesButton.setText("Ver reservaciones");
         verReservacionesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 verReservacionesButtonActionPerformed(evt);
             }
         });
-        Selector.add(verReservacionesButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 230, 50));
+        Selector.add(verReservacionesButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 230, 50));
 
-        verMesas.setBackground(new java.awt.Color(0, 0, 255));
+        verMesas.setBackground(new java.awt.Color(155, 17, 30));
         verMesas.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        verMesas.setForeground(new java.awt.Color(255, 255, 255));
+        verMesas.setForeground(new java.awt.Color(248, 241, 233));
         verMesas.setText("Ver Mesas");
         verMesas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 verMesasActionPerformed(evt);
             }
         });
-        Selector.add(verMesas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 230, 50));
+        Selector.add(verMesas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 230, 50));
 
+        SistemaAdmin_txt.setBackground(new java.awt.Color(255, 64, 64));
         SistemaAdmin_txt.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         SistemaAdmin_txt.setForeground(new java.awt.Color(255, 255, 255));
+        SistemaAdmin_txt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SistemaAdmin_txt.setText("Sistema de administración");
-        Selector.add(SistemaAdmin_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 260, 30));
+        Selector.add(SistemaAdmin_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 250, 30));
 
-        bg.add(Selector, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 510));
+        gestionarEsperasButton.setBackground(new java.awt.Color(155, 17, 30));
+        gestionarEsperasButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        gestionarEsperasButton.setForeground(new java.awt.Color(248, 241, 233));
+        gestionarEsperasButton.setText("Gestionar esperas");
+        gestionarEsperasButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gestionarEsperasButtonActionPerformed(evt);
+            }
+        });
+        Selector.add(gestionarEsperasButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 230, 50));
+
+        bg.add(Selector, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 510));
+
+        content.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
+        content.setLayout(contentLayout);
+        contentLayout.setHorizontalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 770, Short.MAX_VALUE)
+        );
+        contentLayout.setVerticalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+
+        bg.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 770, 400));
 
         decoracion.setBackground(new java.awt.Color(204, 204, 204));
         decoracion.setLayout(new java.awt.BorderLayout());
@@ -197,32 +215,21 @@ public class InterfaZZzzzzZZ extends javax.swing.JFrame {
         Bienvenido_txt.setText("¡Bienvenido!");
         decoracion.add(Bienvenido_txt, java.awt.BorderLayout.CENTER);
 
-        bg.add(decoracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 610, 90));
-
-        content.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
-        content.setLayout(contentLayout);
-        contentLayout.setHorizontalGroup(
-            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 610, Short.MAX_VALUE)
-        );
-        contentLayout.setVerticalGroup(
-            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 360, Short.MAX_VALUE)
-        );
-
-        bg.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 610, 360));
+        bg.add(decoracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 770, 90));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 129, Short.MAX_VALUE))
         );
 
         pack();
@@ -327,7 +334,12 @@ public class InterfaZZzzzzZZ extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfaZZzzzzZZ().setVisible(true);
+            InterfaZZzzzzZZ frame = new InterfaZZzzzzZZ();
+            frame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE); // Cerrar aplicación al salir
+            frame.setLocationRelativeTo(null); // Centrar ventana
+            frame.setResizable(false); // Desactivar redimensionamiento
+            frame.setVisible(true);
+                
             }
         });
     }
