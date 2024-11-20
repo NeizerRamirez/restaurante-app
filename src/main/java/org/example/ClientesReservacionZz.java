@@ -40,60 +40,82 @@ public class ClientesReservacionZz extends javax.swing.JPanel {
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Nombre del cliente");
-        bg.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, -1));
+        jLabel6.setText("Nombre del cliente:");
+        bg.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Tiempo de espera");
-        bg.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, -1, -1));
+        jLabel7.setText("Tiempo de espera:");
+        bg.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, -1, -1));
 
-        nombreCliente.setBackground(new java.awt.Color(255, 255, 255));
-        nombreCliente.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 204, 255), 2, true));
+        nombreCliente.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 51, 102), 2, true));
         nombreCliente.setCaretColor(new java.awt.Color(0, 102, 255));
+        nombreCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         nombreCliente.setDisabledTextColor(new java.awt.Color(51, 153, 255));
-        bg.add(nombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 200, 30));
+        bg.add(nombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 200, 30));
 
-        esperaAprox.setBackground(new java.awt.Color(255, 255, 255));
-        esperaAprox.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 204, 255), 2, true));
+        esperaAprox.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 51, 102), 2, true));
         esperaAprox.setCaretColor(new java.awt.Color(0, 102, 255));
+        esperaAprox.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         esperaAprox.setDisabledTextColor(new java.awt.Color(51, 153, 255));
-        bg.add(esperaAprox, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 200, 30));
+        bg.add(esperaAprox, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 200, 30));
 
         enviarALaEsperaButton.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        enviarALaEsperaButton.setForeground(new java.awt.Color(0, 0, 0));
         enviarALaEsperaButton.setText("Enviar a la espera");
         enviarALaEsperaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enviarALaEsperaButtonActionPerformed(evt);
             }
         });
-        bg.add(enviarALaEsperaButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 230, 30));
+        bg.add(enviarALaEsperaButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 230, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 616, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void enviarALaEsperaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarALaEsperaButtonActionPerformed
-        // TODO add your handling code here:
-        
-        String nombre = nombreCliente.getText();
-        int esperaAproximada = Integer.parseInt(esperaAprox.getText());
-        ClientePila esperas = new ClientePila(nombre, esperaAproximada);
-        GestorBd gestorBd = new GestorBd();
-        gestorBd.agregarAEspera(esperas);
-        JOptionPane.showMessageDialog(null, "Cliente añadido con éxito");
+        try {
+            // Obtener los datos ingresados por el usuario
+            String nombre = nombreCliente.getText();
+            int esperaAproximada = Integer.parseInt(esperaAprox.getText());
+
+            // Verificar que el nombre no esté vacío y la espera sea válida
+            if (nombre.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "El nombre del cliente no puede estar vacío.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            if (esperaAproximada <= 0) {
+                JOptionPane.showMessageDialog(null, "El tiempo de espera debe ser un número positivo.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Crear el objeto ClientePila
+            ClientePila esperas = new ClientePila(nombre, esperaAproximada);
+
+            // Instanciar el GestorBd y agregar a la espera
+            GestorBd gestorBd = new GestorBd();
+            gestorBd.agregarAEspera(esperas);
+
+            // Mostrar mensaje de éxito
+            JOptionPane.showMessageDialog(null, "Cliente añadido con éxito");
+
+        } catch (NumberFormatException ex) {
+            // Captura errores al convertir el tiempo de espera a número
+            JOptionPane.showMessageDialog(null, "Error: El tiempo de espera debe ser un valor numérico.", "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception ex) {
+            // Captura otros errores generales
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_enviarALaEsperaButtonActionPerformed
 
 

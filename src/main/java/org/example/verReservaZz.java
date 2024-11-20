@@ -58,79 +58,80 @@ public class verReservaZz extends javax.swing.JPanel {
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         reservacion.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        reservacion.setForeground(new java.awt.Color(0, 0, 0));
         reservacion.setText("Confirmar reserva");
         reservacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 reservacionActionPerformed(evt);
             }
         });
-        bg.add(reservacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 230, 30));
+        bg.add(reservacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, 230, 30));
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Hora de la reservación");
-        bg.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, -1, -1));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Hora de la reservación:");
+        bg.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Número de mesa");
-        bg.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, -1, -1));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Número de mesa:");
+        bg.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, -1, -1));
 
-        numeroMesa.setBackground(new java.awt.Color(255, 255, 255));
-        numeroMesa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 204, 255), 2, true));
+        numeroMesa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        numeroMesa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 91, 181), 2, true));
         numeroMesa.setCaretColor(new java.awt.Color(0, 102, 255));
         numeroMesa.setDisabledTextColor(new java.awt.Color(51, 153, 255));
-        bg.add(numeroMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 200, 30));
+        bg.add(numeroMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 220, 30));
 
-        horaReservacion.setBackground(new java.awt.Color(255, 255, 255));
-        horaReservacion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 204, 255), 2, true));
+        horaReservacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        horaReservacion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 91, 181), 2, true));
         horaReservacion.setCaretColor(new java.awt.Color(0, 102, 255));
         horaReservacion.setDisabledTextColor(new java.awt.Color(51, 153, 255));
-        bg.add(horaReservacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 220, 30));
+        bg.add(horaReservacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 220, 30));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Nombre del cliente");
-        bg.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, -1, -1));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Nombre del cliente:");
+        bg.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
 
-        nombreCliente.setBackground(new java.awt.Color(255, 255, 255));
-        nombreCliente.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 204, 255), 2, true));
+        nombreCliente.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        nombreCliente.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 91, 181), 2, true));
         nombreCliente.setCaretColor(new java.awt.Color(0, 102, 255));
         nombreCliente.setDisabledTextColor(new java.awt.Color(51, 153, 255));
-        bg.add(nombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 200, 30));
+        bg.add(nombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 220, 30));
 
-        numeroPerso.setBackground(new java.awt.Color(255, 255, 255));
-        numeroPerso.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 204, 255), 2, true));
+        numeroPerso.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        numeroPerso.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 91, 181), 2, true));
         numeroPerso.setCaretColor(new java.awt.Color(0, 102, 255));
         numeroPerso.setDisabledTextColor(new java.awt.Color(51, 153, 255));
-        bg.add(numeroPerso, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 200, 30));
+        bg.add(numeroPerso, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, 220, 30));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Número de personas");
-        bg.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, -1));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Número de personas:");
+        bg.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("Fecha de la reservación");
-        bg.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, -1, -1));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Fecha de la reservación:");
+        bg.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, -1, -1));
 
-        fechaReservacion.setBackground(new java.awt.Color(255, 255, 255));
-        fechaReservacion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 204, 255), 2, true));
+        fechaReservacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fechaReservacion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 91, 181), 2, true));
         fechaReservacion.setCaretColor(new java.awt.Color(0, 102, 255));
         fechaReservacion.setDisabledTextColor(new java.awt.Color(51, 153, 255));
-        bg.add(fechaReservacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, 200, 30));
+        bg.add(fechaReservacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 250, 220, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 624, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 

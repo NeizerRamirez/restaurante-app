@@ -151,7 +151,11 @@ public class ReservasZz extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ReservasZz().setVisible(true);
+                ReservasZz frame = new ReservasZz();
+                frame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+                frame.setLocationRelativeTo(null);
+                frame.setResizable(true);
+                frame.setVisible(true);
             }
         });
     }

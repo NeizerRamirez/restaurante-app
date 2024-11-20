@@ -27,11 +27,11 @@ public class GestorBd {
         try {
             conn = DriverManager.getConnection(URL);
             if (conn != null) {
-                System.out.println("Conexión exitosa a la base de datos.");
+
                 crearTablas(); // Crear tablas al inicializar el objeto
             }
         } catch (SQLException e) {
-            System.err.println("Error de conexión: " + e.getMessage());
+
         }
     }
 
@@ -295,7 +295,6 @@ public class GestorBd {
         try {
             if (conn != null) {
                 conn.close();
-                System.out.println("Conexión cerrada.");
             }
         } catch (SQLException e) {
             System.err.println("Error al cerrar la conexión: " + e.getMessage());
