@@ -25,7 +25,7 @@ public class InterfaZZzzzzZZ extends javax.swing.JFrame {
      */
     public InterfaZZzzzzZZ() {
         initComponents();
-        
+        setSize(1000,580);
         //Panel de inicio este es el predeterminado a salir al principio
         Inicio inicio = new Inicio();
         inicio.setSize(800,500);
@@ -197,14 +197,14 @@ public class InterfaZZzzzzZZ extends javax.swing.JFrame {
         content.setLayout(contentLayout);
         contentLayout.setHorizontalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 770, Short.MAX_VALUE)
+            .addGap(0, 760, Short.MAX_VALUE)
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 400, Short.MAX_VALUE)
         );
 
-        bg.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 770, 400));
+        bg.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 760, 400));
 
         decoracion.setBackground(new java.awt.Color(204, 204, 204));
         decoracion.setLayout(new java.awt.BorderLayout());
@@ -229,7 +229,7 @@ public class InterfaZZzzzzZZ extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 129, Short.MAX_VALUE))
+                .addGap(0, 333, Short.MAX_VALUE))
         );
 
         pack();
